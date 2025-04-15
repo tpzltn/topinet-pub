@@ -1,5 +1,5 @@
 echo "Windows 11 aktiválás"
-slmgr /ipk {KULCS}
+slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX
 slmgr /skms 192.168.1.10:16880
 slmgr /ato
 echo "Kérem várjon amíg aktiválódik a Windows..."
