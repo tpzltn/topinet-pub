@@ -4,7 +4,7 @@ slmgr /skms 192.168.1.10:16880
 slmgr /ato
 echo "Kérem várjon amíg aktiválódik a Windows..."
 pause
-slmgr /skms topinet.top:16880
+slmgr /skms kms.topinet.top:16880
 
 echo "Office 2024 aktiválás"
 set /p nev="Kérem adja meg a számítógép nevét: "
@@ -14,6 +14,6 @@ cscript "C:\Program Files\Microsoft Office\Office16\ospp.vbs" /inpkey:XJ2XN-FW8R
 cscript "C:\Program Files\Microsoft Office\Office16\ospp.vbs" /sethst:192.168.1.10
 cscript "C:\Program Files\Microsoft Office\Office16\ospp.vbs" /setprt:16880
 cscript "C:\Program Files\Microsoft Office\Office16\ospp.vbs" /act
-cscript "C:\Program Files\Microsoft Office\Office16\ospp.vbs" /sethst:topinet.top
+cscript "C:\Program Files\Microsoft Office\Office16\ospp.vbs" /sethst:kms.topinet.top
 Echo "Az aktiválás sikeres volt"
 Pause
