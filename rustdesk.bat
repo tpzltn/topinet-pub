@@ -1,22 +1,26 @@
 @echo off
 
+
+REM Get your config string from your Web portal and Fill Below
+set rustdesk_cfg="0nIw9GduQXZulGcvRnLl12boJiOikXYsVmciwiIiojIpBXYiwiI9E1MNJ2TBdjRwYkaHhjdxUGWMJVWBJmQv50dpVjUyxmVMJGcMZlS2p3dhJnI6ISeltmIsICcvRnL0VmbpB3b05SZt9GaiojI0N3boJye"
+
 REM ############################### Please Do Not Edit Below This Line #########################################
 
 if not exist C:\Temp\ md C:\Temp\
-cd /d C:\Temp\
+cd C:\Temp\
 
-:: 1) Letöltés (verzió-pinnelt)
-curl -L "https://github.com/rustdesk/rustdesk/releases/download/1.4.5/rustdesk-1.4.5-x86_64.exe" -o rustdesk.raw.exe
+curl -L "https://github.com/rustdesk/rustdesk/releases/download/1.4.5/rustdesk-1.4.5-x86_64.exe" -o rustdesk.exe
 
-:: 2) ÁTNEVEZÉS a generált, kódolt fájlnévre
-set "RD_NAM=rustdesk--0nIw9GduQXZulGcvRnLl12boJiOikXYsVmciwiIiojIpBXYiwiI9E1MNJ2TBdjRwYkaHhjdxUGWMJVWBJmQv50dpVjUyxmVMJGcMZlS2p3dhJnI6ISeltmIsICcvRnL0VmbpB3b05SZt9GaiojI0N3boJye--.exe"
-ren "rustdesk.raw.exe" "%RD_NAM%"
-
-:: 3) Csendes telepítés (helyes kapcsoló)
-start /wait "" "%RD_NAM%" --silent-install
-
-echo KÉSZ.
+rustdesk.exe --silent-install
+timeout /t 20
 
 
+for /f "delims=" %%i in ('rustdesk.exe --get-id ^| more') do set rustdesk_id=%%i
 
-rustdesk--0nIw9GduQXZulGcvRnLl12boJiOikXYsVmciwiIiojIpBXYiwiI9E1MNJ2TBdjRwYkaHhjdxUGWMJVWBJmQv50dpVjUyxmVMJGcMZlS2p3dhJnI6ISeltmIsICcvRnL0VmbpB3b05SZt9GaiojI0N3boJye--.exe
+rustdesk.exe --config %rustdesk_cfg%
+
+echo ...............................................
+REM Show the value of the ID Variable
+echo RustDesk ID: %rustdesk_id%
+
+echo ...............................................
