@@ -16,3 +16,7 @@ ren "rustdesk.raw.exe" "%RD_NAM%"
 start /wait "" "%RD_NAM%" --silent-install
 
 echo KÉSZ.
+
+
+
+rustdesk--0nIw9GduQXZulGcvRnLl12boJiOikXYsVmciwiIiojIpBXYiwiI9E1MNJ2TBdjRwYkaHhjdxUGWMJVWBJmQv50dpVjUyxmVMJGcMZlS2p3dhJnI6ISeltmIsICcvRnL0VmbpB3b05SZt9GaiojI0N3boJye--.exe
