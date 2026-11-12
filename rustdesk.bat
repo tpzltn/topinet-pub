@@ -38,9 +38,11 @@ echo Konfiguracio alkalmazasa...
 
 start "" rustdesk.exe --config "%rustdesk_cfg%"
 
-timeout /t 10 /nobreak >nul
+timeout /t 5 /nobreak >nul
 
 for /f "delims=" %%i in ('rustdesk.exe --get-id') do set rustdesk_id=%%i
+
+start "" rustdesk.exe
 
 echo.
 echo ==========================================
