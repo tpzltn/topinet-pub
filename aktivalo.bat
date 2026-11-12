@@ -1,4 +1,4 @@
-echo "Windows 11 aktiválás"
+echo "Windows 11 Professional aktiválás"
 slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX
 slmgr /skms kms.topinet.top:16880
 slmgr /ato
